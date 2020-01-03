@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<body>
+
+<h2>JavaScript kalkulator</h2>
+<input type="text" id="prviBroj">
+<input type="text" id="drugiBroj">
+<select id="operacija">
+<option value="sabiranje">Sabiranje</option>
+<option value="oduzimanje">Oduzimanje</option>
+<option value="mnozenje">Mnozenje</option>
+<option value="deljenje">Deljenje</option>
+</select>
+<button type="submit" id="btn">Izracunaj</button>
+<p id="rezultat"></p>
+<!-- // broj1 : kreirati polje za prvi broj
+// broj2: kreirati polje za drugi broj
+// dugme za submit
+// prikaz rezultata -->
+
+<script>
+    btn.addEventListener('click', izracunaj);
+
+    function izracunaj() {
+        var s = Number("0");
+        var prviBroj = Number(document.querySelector("#prviBroj").value);
+        var drugiBroj = Number(document.querySelector("#drugiBroj").value);
+        var operacija = document.querySelector('#operacija').value;
+        const btn = document.querySelector('#btn');
+        if(operacija == "sabiranje"){
+            s = prviBroj + drugiBroj;
+            document.getElementById('rezultat').textContent = s.toString();
+        } else if(operacija == "oduzimanje") {
+            s = prviBroj - drugiBroj;
+            document.getElementById('rezultat').textContent = s.toString();
+        } else if(operacija == "mnozenje"){
+            s = prviBroj*drugiBroj;
+            document.getElementById('rezultat').textContent = s.toString();
+        } else if(operacija =="deljenje") {
+            s = prviBroj/drugiBroj;
+            document.getElementById('rezultat').textContent = s.toString();
+        }
+        console.log(s);       
+    }
+    </script>
+
+</body>
